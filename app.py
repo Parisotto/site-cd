@@ -31,17 +31,14 @@ class Frase(db.Model):
     return  f"Frase: #{self.id}, autor: {self.autor}, frase: {self.frase}"
 
   
-  
-
 @app.route("/")
 def index():
   return render_template("index.html")
 
 
-@app.route("/analise", defaults={'usuario':'Visitante'})
-@app.route("/analise/<usuario>")
+@app.route("/analise")
 def analise(usuario):
-  return render_template("analise.html", usuario=usuario)
+  return render_template("analise.html")
 
 
 @app.route('/estatistica') 
@@ -53,12 +50,25 @@ def estatistica():
 def programacao(): 
   return render_template('programacao.html')
 
+
+@app.route('/tarefas') 
+def tarefas(): 
+  return render_template('tarefas.html')
+
+
+@app.route('/frases') 
+def frases(): 
+  return render_template('frases.html')
+
+
 @app.route("/galeria")
 def galeria():
   numeros = random.sample(range(1, 61), 30)
   lista_imagens = [f"{num}.jpg" for num in numeros]
   return render_template("galeria.html", imagens=lista_imagens)
 
+
+# novas rotas
 
 
 if __name__ == "__main__":
