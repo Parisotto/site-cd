@@ -150,6 +150,10 @@ def frasesDelete(id):
   except:
     return "Houve um problema na remoção da tarefa"
 
+@app.errorhandler(404)
+def not_found(error):
+  return render_template("404.html")
+
 
 if __name__ == "__main__":
   with app.app_context():
