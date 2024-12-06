@@ -33,10 +33,9 @@ def index():
   return render_template("index.html")
 
 
-@app.route("/analise", defaults={'usuario':'Visitante'})
-@app.route("/analise/<usuario>")
-def analise(usuario):
-  return render_template("analise.html", usuario=usuario)
+@app.route("/analise")
+def analise():
+  return render_template("analise.html")
 
 
 @app.route('/estatistica') 
