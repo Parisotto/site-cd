@@ -50,7 +50,7 @@ def programacao():
 
 @app.route("/galeria")
 def galeria():
-  numeros = random.sample(range(1, 26), 15)
+  numeros = random.sample(range(1, 61), 25)
   lista_imagens = [f"{num}.jpg" for num in numeros]
   return render_template("galeria.html", imagens=lista_imagens)
 
