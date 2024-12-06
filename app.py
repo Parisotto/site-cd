@@ -37,7 +37,7 @@ def index():
 
 
 @app.route("/analise")
-def analise(usuario):
+def analise():
   return render_template("analise.html")
 
 
